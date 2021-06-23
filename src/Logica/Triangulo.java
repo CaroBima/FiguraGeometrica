@@ -1,6 +1,5 @@
 package Logica;
 
-import java.util.*;
 
 public class Triangulo extends FiguraGeometrica{
     private int lado1;

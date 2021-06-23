@@ -92,19 +92,23 @@ public class Principal {
             }
         }
         
-        switch(tipoFigura){
-            case 1: 
-                    Cuadrado cuadrado = new Cuadrado();
-                    cuadrado.calcularArea(lado);
-            case 2:
-                    Circulo circulo = new Circulo();
-                    circulo.calcularArea(radio);
-            case 3:
-                    Triangulo triangulo = new Triangulo();
-                    triangulo.calcularArea(lado1, lado2, lado3);
-                    System.out.println("Área del triangulo: " + triangulo.getArea());
-        }
-            
+        if(areaOPerimetro == 1){
+            switch(tipoFigura){
+                case 1: 
+                        Cuadrado cuadrado = new Cuadrado();
+                        cuadrado.calcularArea(lado);
+                        break;
+                case 2:
+                        Circulo circulo = new Circulo();
+                        circulo.calcularArea(radio);
+                        break;
+                case 3:
+                        Triangulo triangulo = new Triangulo();
+                        triangulo.calcularArea(lado1, lado2, lado3);
+                        System.out.println("Área del triangulo: " + triangulo.getArea());
+                        break;
+            }
+        }    
             
             
     } // main
