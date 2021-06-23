@@ -13,9 +13,9 @@ public class Principal {
         int tipoFigura = 9;
         int lado = 0;
         double radio = 02;
-        int lado1 = 0;
-        int lado2 = 0;
-        int lado3 = 0;
+        double lado1 = 0;
+        double lado2 = 0;
+        double lado3 = 0;
         int areaOPerimetro = 0;
         
 
@@ -94,19 +94,21 @@ public class Principal {
         
         if(areaOPerimetro == 1){
             switch(tipoFigura){
-                case 1: 
-                        Cuadrado cuadrado = new Cuadrado();
-                        cuadrado.calcularArea(lado);
-                        break;
-                case 2:
-                        Circulo circulo = new Circulo();
-                        circulo.calcularArea(radio);
-                        break;
-                case 3:
-                        Triangulo triangulo = new Triangulo();
-                        triangulo.calcularArea(lado1, lado2, lado3);
-                        System.out.println("Área del triangulo: " + triangulo.getArea());
-                        break;
+                case 1 -> {
+                    Cuadrado cuadrado = new Cuadrado();
+                    cuadrado.calcularArea(lado);
+                    System.out.println("El área del cuadrado es " + cuadrado.getArea() );
+                }
+                case 2 -> {
+                    Circulo circulo = new Circulo();
+                    circulo.calcularArea(radio);
+                    System.out.println("El área del círculo es " + circulo.getArea() );
+                }
+                case 3 -> {
+                    Triangulo triangulo = new Triangulo();
+                    triangulo.calcularArea(lado1, lado2, lado3);
+                    System.out.println("Área del triangulo: " + triangulo.getArea());
+                }
             }
         }    
             

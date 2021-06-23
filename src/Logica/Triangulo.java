@@ -2,20 +2,22 @@ package Logica;
 
 
 public class Triangulo extends FiguraGeometrica{
-    private int lado1;
-    private int lado2;
-    private int lado3;
+    private double lado1;
+    private double lado2;
+    private double lado3;
     private double angulo1;
     private double angulo2;
     private double angulo3;
     private double area = 0;
     private double semiperimetro = 0;
-    
+    private double raiz = 0;
     
 
-    public void calcularArea(int lado1, int lado2, int lado3){
+    //calcula el area del triangulo segun los lados ingresados por el usuario
+    public void calcularArea(double lado1, double lado2, double lado3){
         semiperimetro = (lado1 + lado2 + lado3)/2;
-        area = Math.sqrt(semiperimetro*(semiperimetro - lado1)*(semiperimetro - lado2)*(semiperimetro - lado3));
+        raiz = semiperimetro*((semiperimetro - lado1)*(semiperimetro - lado2)*(semiperimetro - lado3));
+        area = Math.sqrt(raiz);
         this.setArea(area);
     }
     

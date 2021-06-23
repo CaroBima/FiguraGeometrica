@@ -8,7 +8,7 @@ public class Cuadrado extends FiguraGeometrica{
     public void calcularArea(int lad){
         ar = lad*lad;
         this.setArea(ar); 
-        System.out.println("El área del cuadrado es " + this.getArea() );
+       
     }
     
      public void calcularPerimetro(int lad){

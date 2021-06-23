@@ -9,7 +9,7 @@ public class Circulo extends FiguraGeometrica {
      public void calcularArea(double rad){
         radio = rad;
         this.setArea( 3.14*radio*radio);   
-        System.out.println("El área del círculo es " + this.getArea() );
+       
      }
      
     public Circulo(double radio, double diametro, int cantidadLados, String nombre, double area, double perimetro) {
