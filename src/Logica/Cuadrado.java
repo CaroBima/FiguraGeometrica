@@ -11,11 +11,10 @@ public class Cuadrado extends FiguraGeometrica{
        
     }
     
-     public void calcularPerimetro(int lad){
+     public void calcularPerimetro(int lado){
         int perim;
-        perim = lad*4;
+        perim = lado*4;
         this.setPerimetro(perim);
-        System.out.println("El perímetro del cuadrado es " + this.getPerimetro());
     }
 
     public Cuadrado() {

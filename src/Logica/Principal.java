@@ -110,7 +110,26 @@ public class Principal {
                     System.out.println("Área del triangulo: " + triangulo.getArea());
                 }
             }
-        }    
+        } else{
+            switch(tipoFigura){
+                case 1 -> {
+                    Cuadrado cuadrado = new Cuadrado();
+                    cuadrado.calcularPerimetro(lado);
+                    System.out.println("El perímetro del cuadrado es " + cuadrado.getPerimetro() );
+                }
+                case 2 -> {
+                    Circulo circulo = new Circulo();
+                    circulo.calcularPerimetro(radio);
+                    System.out.println("El perímetro del círculo es " + circulo.getPerimetro() );
+                }
+                case 3 -> {
+                    Triangulo triangulo = new Triangulo();
+                    triangulo.calcularPerimetro(lado1, lado2, lado3);
+                    System.out.println("El perímetro del triangulo es " + triangulo.getPerimetro());
+                }
+            }
+        
+        }   
             
             
     } // main

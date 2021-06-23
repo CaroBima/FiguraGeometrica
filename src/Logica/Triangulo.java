@@ -21,6 +21,13 @@ public class Triangulo extends FiguraGeometrica{
         this.setArea(area);
     }
     
+    public void calcularPerimetro(double lado1, double lado2, double lado3){
+        double perim = 0;
+        perim = lado1 + lado2 + lado3;
+        this.setPerimetro(perim);
+    }
+
+
     public Triangulo(int lado1, int lado2, int lado3, double angulo1, double angulo2, double angulo3, int cantidadLados, String nombre, double area, double perimetro) {
         super(cantidadLados, nombre, area, perimetro);
         this.lado1 = lado1;
