@@ -81,6 +81,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado1.setEditable(false);
         txtLado1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtLado1.setText("0");
+        txtLado1.setEnabled(false);
 
         lblLado2.setText("Lado 2:");
 
@@ -229,6 +230,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void rbtnCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCuadradoActionPerformed
       
         //habilito solo el lado1 para poder ingresar el lado del cuadrado
+        txtResultado.setText("0");
         lblLado1.setText("Lado:   ");
         txtLado1.setEnabled(true);
         txtLado1.setEditable(true);
@@ -238,11 +240,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(false);
         txtRadio.setEnabled(false);
         txtRadio.setEditable(false);
+       
     }//GEN-LAST:event_rbtnCuadradoActionPerformed
 
     private void rbtnTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTrianguloActionPerformed
       
         //habilito para ingresar los tres lados del triangulo
+        txtResultado.setText("0");
+        this.limpiar();
+        
         lblLado1.setText("Lado 1: ");
         txtLado1.setEnabled(true);
         txtLado1.setEditable(true);
@@ -252,11 +258,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(true);
         txtRadio.setEnabled(false);
         txtRadio.setEditable(false);
+       
     }//GEN-LAST:event_rbtnTrianguloActionPerformed
 
     private void rbtnCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCirculoActionPerformed
-      
         //habilito solo el campo que permite ingresar el radio del circulo
+        txtResultado.setText("0");
+        this.limpiar();
+        
         txtLado1.setEnabled(false);
         txtLado1.setEditable(false);
         txtLado2.setEnabled(false);
@@ -265,15 +274,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(false);
         txtRadio.setEnabled(true);
         txtRadio.setEditable(true);
+    
     }//GEN-LAST:event_rbtnCirculoActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         this.limpiar();
+        txtResultado.setText("0");
+        btnGrupo.clearSelection();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
         
         if(rbtnTriangulo.isSelected()){
+            
             Controladora control = new Controladora();
             double lado1;
             double lado2;
@@ -288,22 +301,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
             
             txtResultado.setText(String.valueOf(areaTriangulo));
         }
-            
         
-        //limpio el formulario tras calcular el area
-        this.limpiar();
     }//GEN-LAST:event_btnAreaActionPerformed
 
     private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
-        //limpio el formulario tras calcular el perimetro
-        this.limpiar();
-         //limpio el campo de resultado
-        txtResultado.setText("0");
+       if(rbtnTriangulo.isSelected()){
+           Controladora control = new Controladora();
+           double lado1;
+           double lado2;
+           double lado3;
+           double perimetroTriangulo;
+           
+           lado1 =  Double.parseDouble(txtLado1.getText());
+           lado2 =  Double.parseDouble(txtLado2.getText());
+           lado3 =  Double.parseDouble(txtLado3.getText());
+           perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
+           txtResultado.setText(String.valueOf(perimetroTriangulo));
+       }
     }//GEN-LAST:event_btnPerimetroActionPerformed
 
     private void limpiar(){
-        //limpia los radio btn
-        btnGrupo.clearSelection();
         
         //seteo a 0 los textfield
         txtLado1.setText("0");
