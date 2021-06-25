@@ -300,6 +300,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
             areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
             
             txtResultado.setText(String.valueOf(areaTriangulo));
+        
+        }else if(rbtnCuadrado.isSelected()){
+            Controladora control = new Controladora();
+            double lado1;
+            double areacuadrado;
+            
+            lado1 = Double.parseDouble(txtLado1.getText());
+            
+            areacuadrado = control.calcularAreaCuadrado(lado1);
+            
+            txtResultado.setText(String.valueOf(areacuadrado));
+        }else if(rbtnCirculo.isSelected()){
+            Controladora control = new Controladora();
+            double radio;
+            double radioCirculo;
+            
+            radio = Double.parseDouble(txtRadio.getText());
+            
+            radioCirculo = control.calcularAreaCirculo(radio);
+            
+            txtResultado.setText(String.valueOf(radioCirculo));
+                
         }
         
     }//GEN-LAST:event_btnAreaActionPerformed
