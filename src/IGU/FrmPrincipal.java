@@ -1,5 +1,7 @@
 package IGU;
 
+import Logica.Controladora;
+
 public class FrmPrincipal extends javax.swing.JFrame {
 
     public FrmPrincipal() {
@@ -225,6 +227,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbtnCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCuadradoActionPerformed
+      
         //habilito solo el lado1 para poder ingresar el lado del cuadrado
         lblLado1.setText("Lado:   ");
         txtLado1.setEnabled(true);
@@ -238,7 +241,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtnCuadradoActionPerformed
 
     private void rbtnTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTrianguloActionPerformed
-       //habilito para ingresar los tres lados del triangulo
+      
+        //habilito para ingresar los tres lados del triangulo
         lblLado1.setText("Lado 1: ");
         txtLado1.setEnabled(true);
         txtLado1.setEditable(true);
@@ -251,7 +255,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtnTrianguloActionPerformed
 
     private void rbtnCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCirculoActionPerformed
-       //habilito solo el campo que permite ingresar el radio del circulo
+      
+        //habilito solo el campo que permite ingresar el radio del circulo
         txtLado1.setEnabled(false);
         txtLado1.setEditable(false);
         txtLado2.setEnabled(false);
@@ -267,6 +272,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
+        
+        if(rbtnTriangulo.isSelected()){
+            Controladora control = new Controladora();
+            double lado1;
+            double lado2;
+            double lado3;
+            double areaTriangulo;
+            
+            lado1 =  Double.parseDouble(txtLado1.getText());
+            lado2 =  Double.parseDouble(txtLado2.getText());
+            lado3 =  Double.parseDouble(txtLado3.getText());
+             
+            areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
+            
+            txtResultado.setText(String.valueOf(areaTriangulo));
+        }
+            
+        
         //limpio el formulario tras calcular el area
         this.limpiar();
     }//GEN-LAST:event_btnAreaActionPerformed
@@ -274,6 +297,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
         //limpio el formulario tras calcular el perimetro
         this.limpiar();
+         //limpio el campo de resultado
+        txtResultado.setText("0");
     }//GEN-LAST:event_btnPerimetroActionPerformed
 
     private void limpiar(){
@@ -295,7 +320,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(false);
         txtRadio.setEnabled(false);
         txtRadio.setEditable(false);
-        
+       
     }
     /**
      * @param args the command line arguments

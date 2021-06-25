@@ -11,13 +11,14 @@ public class Triangulo extends FiguraGeometrica{
     private double area = 0;
     private double semiperimetro = 0;
     private double raiz = 0;
-    
+    private double raiz2 = 0;
 
     //calcula el area del triangulo segun los lados ingresados por el usuario
     public void calcularArea(double lado1, double lado2, double lado3){
         semiperimetro = (lado1 + lado2 + lado3)/2;
         raiz = semiperimetro*((semiperimetro - lado1)*(semiperimetro - lado2)*(semiperimetro - lado3));
-        area = Math.sqrt(raiz);
+        raiz2= Math.abs(raiz);
+        area = Math.sqrt(raiz2);
         this.setArea(area);
     }
     
