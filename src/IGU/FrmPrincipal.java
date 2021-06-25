@@ -1,6 +1,7 @@
 package IGU;
 
 import Logica.Controladora;
+import javax.swing.JOptionPane;
 
 public class FrmPrincipal extends javax.swing.JFrame {
 
@@ -284,7 +285,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
-
+        
         if (rbtnTriangulo.isSelected()) {
 
             Controladora control = new Controladora();
@@ -292,39 +293,51 @@ public class FrmPrincipal extends javax.swing.JFrame {
             double lado2;
             double lado3;
             double areaTriangulo;
+           
+            try{ //para validar que el valor ingresado sea numero
+                lado1 = Double.parseDouble(txtLado1.getText());
+                lado2 = Double.parseDouble(txtLado2.getText());
+                lado3 = Double.parseDouble(txtLado3.getText());
 
-            lado1 = Double.parseDouble(txtLado1.getText());
-            lado2 = Double.parseDouble(txtLado2.getText());
-            lado3 = Double.parseDouble(txtLado3.getText());
-
-            //lamo al metodo que permite obtener el area del triangulo y lo muestro en el txtbox de resultado
-            areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
-            txtResultado.setText(String.valueOf(areaTriangulo));
-
+                //lamo al metodo que permite obtener el area del triangulo y lo muestro en el txtbox de resultado
+                areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
+                txtResultado.setText(String.valueOf(areaTriangulo));
+            
+            }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
+            }
         } else if (rbtnCuadrado.isSelected()) {
-
+                
             Controladora control = new Controladora();
             double lado1;
             double areacuadrado;
+                
+                
+            try{ //para validar que el valor ingresado sea numero
+                lado1 = Double.parseDouble(txtLado1.getText());
 
-            lado1 = Double.parseDouble(txtLado1.getText());
-
-            //lamo al metodo que permite obtener el area del cuadrado y lo muestro en el txtbox de resultado
-            areacuadrado = control.calcularAreaCuadrado(lado1);
-            txtResultado.setText(String.valueOf(areacuadrado));
-
+                //lamo al metodo que permite obtener el area del cuadrado y lo muestro en el txtbox de resultado
+                areacuadrado = control.calcularAreaCuadrado(lado1);
+                txtResultado.setText(String.valueOf(areacuadrado));
+            }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
+            } 
+            
         } else if (rbtnCirculo.isSelected()) {
 
             Controladora control = new Controladora();
             double radio;
             double radioCirculo;
+            
+            try{ //para validar que el valor ingresado sea numero
+                radio = Double.parseDouble(txtRadio.getText());
 
-            radio = Double.parseDouble(txtRadio.getText());
-
-            //lamo al metodo que permite obtener el area del circulo y lo muestro en el txtbox de resultado
-            radioCirculo = control.calcularAreaCirculo(radio);
-            txtResultado.setText(String.valueOf(radioCirculo));
-
+                //lamo al metodo que permite obtener el area del circulo y lo muestro en el txtbox de resultado
+                radioCirculo = control.calcularAreaCirculo(radio);
+                txtResultado.setText(String.valueOf(radioCirculo));
+            }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
+            }
         }
 
     }//GEN-LAST:event_btnAreaActionPerformed
@@ -338,37 +351,47 @@ public class FrmPrincipal extends javax.swing.JFrame {
             double lado2;
             double lado3;
             double perimetroTriangulo;
+            
+            try{
+                lado1 = Double.parseDouble(txtLado1.getText());
+                lado2 = Double.parseDouble(txtLado2.getText());
+                lado3 = Double.parseDouble(txtLado3.getText());
 
-            lado1 = Double.parseDouble(txtLado1.getText());
-            lado2 = Double.parseDouble(txtLado2.getText());
-            lado3 = Double.parseDouble(txtLado3.getText());
-
-            //lamo al metodo que permite obtener el perímetro del triangulo y lo muestro en el txtbox de resultado
-            perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
-            txtResultado.setText(String.valueOf(perimetroTriangulo));
-
+                //lamo al metodo que permite obtener el perímetro del triangulo y lo muestro en el txtbox de resultado
+                perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
+                txtResultado.setText(String.valueOf(perimetroTriangulo));
+            }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
+            }
         } else if (rbtnCuadrado.isSelected()) {
             Controladora control = new Controladora();
             double lado;
             double perimetroCuadrado;
 
-            lado = Double.parseDouble(txtLado1.getText());
+            try{    
+                lado = Double.parseDouble(txtLado1.getText());
 
-            //lamo al metodo que permite obtener el perímetro del cuadrado y lo muestro en el txtbox de resultado
-            perimetroCuadrado = control.calcularPerimetroCuadrado(lado);
-            txtResultado.setText(String.valueOf(perimetroCuadrado));
-
+                //lamo al metodo que permite obtener el perímetro del cuadrado y lo muestro en el txtbox de resultado
+                perimetroCuadrado = control.calcularPerimetroCuadrado(lado);
+                txtResultado.setText(String.valueOf(perimetroCuadrado));
+            }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
+            }
+            
         } else if (rbtnCirculo.isSelected()) {
 
             Controladora control = new Controladora();
             double radio;
             double perimetroCirculo;
+            try{
+                radio = Double.parseDouble(txtRadio.getText());
 
-            radio = Double.parseDouble(txtRadio.getText());
-
-            //lamo al metodo que permite obtener el perímetro del circulo y lo muestro en el txtbox de resultado
-            perimetroCirculo = control.calcularPerimetroCirculo(radio);
-            txtResultado.setText(String.valueOf(perimetroCirculo));
+                //lamo al metodo que permite obtener el perímetro del circulo y lo muestro en el txtbox de resultado
+                perimetroCirculo = control.calcularPerimetroCirculo(radio);
+                txtResultado.setText(String.valueOf(perimetroCirculo));
+            }catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
+            }
         }
     }//GEN-LAST:event_btnPerimetroActionPerformed
 
