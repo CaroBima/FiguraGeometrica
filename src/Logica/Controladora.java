@@ -16,6 +16,12 @@ public class Controladora {
         triangulo.calcularPerimetro(lado1, lado2, lado3);
         return triangulo.getPerimetro();
     }
+    
+    public boolean esTriangulo(double lado1, double lado2, double lado3){
+        Triangulo triangulo = new Triangulo();
+        
+        return triangulo.esTriangulo(lado1, lado2, lado3);
+    }
 
     //area y perimetro del cuadrado
     public double calcularAreaCuadrado(double lado) {

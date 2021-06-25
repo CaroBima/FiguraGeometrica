@@ -295,14 +295,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
             double areaTriangulo;
            
             try{ //para validar que el valor ingresado sea numero
+                
                 lado1 = Double.parseDouble(txtLado1.getText());
                 lado2 = Double.parseDouble(txtLado2.getText());
                 lado3 = Double.parseDouble(txtLado3.getText());
-
-                //lamo al metodo que permite obtener el area del triangulo y lo muestro en el txtbox de resultado
-                areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
-                txtResultado.setText(String.valueOf(areaTriangulo));
-            
+                
+                if (control.esTriangulo(lado1, lado2, lado3)){
+                   
+                    //lamo al metodo que permite obtener el area del triangulo y lo muestro en el txtbox de resultado
+                    areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
+                    txtResultado.setText(String.valueOf(areaTriangulo));
+                 
+                }else{
+                    JOptionPane.showMessageDialog(null, "Los lados deben ser distintos a cero.");
+                }
+                 
             }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
             }
@@ -356,10 +363,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 lado1 = Double.parseDouble(txtLado1.getText());
                 lado2 = Double.parseDouble(txtLado2.getText());
                 lado3 = Double.parseDouble(txtLado3.getText());
-
-                //lamo al metodo que permite obtener el perímetro del triangulo y lo muestro en el txtbox de resultado
-                perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
-                txtResultado.setText(String.valueOf(perimetroTriangulo));
+                if (control.esTriangulo(lado1, lado2, lado3)){
+                    //lamo al metodo que permite obtener el perímetro del triangulo y lo muestro en el txtbox de resultado
+                    perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
+                    txtResultado.setText(String.valueOf(perimetroTriangulo));
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Los lados deben ser distintos a cero.");
+                }
             }catch(NumberFormatException ex){
                 JOptionPane.showMessageDialog(null, "Error: sólo se pueden ingresar números");
             }

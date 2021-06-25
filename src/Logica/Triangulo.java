@@ -28,6 +28,10 @@ public class Triangulo extends FiguraGeometrica {
         this.setPerimetro(perim);
     }
 
+    public boolean esTriangulo(double lado1, double lado2, double lado3){
+        return ( (lado1 !=0) && (lado2 != 0) && (lado3!=0) );
+    }
+    
     public Triangulo(int lado1, int lado2, int lado3, double angulo1, double angulo2, double angulo3, int cantidadLados, String nombre, double area, double perimetro) {
         super(cantidadLados, nombre, area, perimetro);
         this.lado1 = lado1;
