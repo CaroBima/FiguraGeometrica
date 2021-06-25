@@ -4,6 +4,7 @@ se asume que el usuario va a ingresar solo numeros
  */
 package Logica;
 
+import IGU.FrmPrincipal;
 import java.util.Scanner;
 
 public class Principal {
@@ -18,6 +19,10 @@ public class Principal {
         double lado3 = 0;
         int areaOPerimetro = 0;
         
+        FrmPrincipal formulario = new  FrmPrincipal();
+        formulario.setVisible(true);
+        //formulario.setLocationByPlatform(true);
+        formulario.setLocationRelativeTo(null); //
 
         //valido que se ingrese una opcion valida
         while (tipoFigura != 0 && (tipoFigura != 1 && tipoFigura != 2 && tipoFigura != 3)) {
