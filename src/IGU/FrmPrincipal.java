@@ -300,7 +300,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 lado2 = Double.parseDouble(txtLado2.getText());
                 lado3 = Double.parseDouble(txtLado3.getText());
                 
-                if (control.esTriangulo(lado1, lado2, lado3)){
+                if (control.esTriangulo(lado1, lado2, lado3)){ //valido que los lados sean mayores a cero, si alguno fuera cero no seria un triangulo
                    
                     //lamo al metodo que permite obtener el area del triangulo y lo muestro en el txtbox de resultado
                     areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
