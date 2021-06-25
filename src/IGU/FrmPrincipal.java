@@ -7,6 +7,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnGrupo.add(rbtnCirculo);
         btnGrupo.add(rbtnCuadrado);
         btnGrupo.add(rbtnTriangulo);
+        
     }
 
     /**
@@ -26,6 +27,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         rbtnCirculo = new javax.swing.JRadioButton();
         rbtnTriangulo = new javax.swing.JRadioButton();
         jSeparatorInf = new javax.swing.JSeparator();
+        txtLado1 = new javax.swing.JTextField();
+        lblLado1 = new javax.swing.JLabel();
+        lblLado3 = new javax.swing.JLabel();
+        lblLado2 = new javax.swing.JLabel();
+        lblRadio = new javax.swing.JLabel();
+        txtLado2 = new javax.swing.JTextField();
+        txtLado3 = new javax.swing.JTextField();
+        txtRadio = new javax.swing.JTextField();
+        btnArea = new javax.swing.JButton();
+        btnPerimetro = new javax.swing.JButton();
+        txtResultado = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,13 +51,60 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jSeparatorSup.setForeground(new java.awt.Color(255, 102, 102));
 
         rbtnCuadrado.setText("Cuadrado");
+        rbtnCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnCuadradoActionPerformed(evt);
+            }
+        });
 
         rbtnCirculo.setText("Círculo");
+        rbtnCirculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnCirculoActionPerformed(evt);
+            }
+        });
 
         rbtnTriangulo.setText("Tríangulo");
+        rbtnTriangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnTrianguloActionPerformed(evt);
+            }
+        });
 
         jSeparatorInf.setBackground(new java.awt.Color(255, 0, 51));
         jSeparatorInf.setForeground(new java.awt.Color(255, 102, 102));
+
+        txtLado1.setEditable(false);
+        txtLado1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtLado1.setText("0");
+
+        lblLado1.setText("Lado 1:");
+
+        lblLado3.setText("Lado 3:");
+
+        lblLado2.setText("Lado 2:");
+
+        lblRadio.setText("Radio:");
+
+        txtLado2.setEditable(false);
+        txtLado2.setEnabled(false);
+
+        txtLado3.setEditable(false);
+        txtLado3.setEnabled(false);
+
+        txtRadio.setEditable(false);
+        txtRadio.setEnabled(false);
+
+        btnArea.setText("Área");
+
+        btnPerimetro.setText("Perímetro");
+
+        txtResultado.setEditable(false);
+        txtResultado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtResultado.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtResultado.setText("0");
+
+        btnLimpiar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -66,8 +126,35 @@ public class FrmPrincipal extends javax.swing.JFrame {
                         .addGap(77, 77, 77)
                         .addComponent(rbtnTriangulo)
                         .addGap(79, 79, 79)
-                        .addComponent(rbtnCirculo)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(rbtnCirculo))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lblLado1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLado1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(lblLado2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLado2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(42, 42, 42)
+                                .addComponent(lblLado3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLado3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addComponent(lblRadio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(btnLimpiar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnArea, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPerimetro)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,7 +169,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     .addComponent(rbtnCuadrado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparatorInf, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 402, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtLado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLado1)
+                    .addComponent(txtLado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLado2)
+                    .addComponent(lblLado3)
+                    .addComponent(txtLado3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblRadio))
+                .addGap(30, 30, 30)
+                .addComponent(txtResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnArea)
+                    .addComponent(btnPerimetro)
+                    .addComponent(btnLimpiar))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -99,19 +203,67 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void rbtnCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCuadradoActionPerformed
+        //habilito solo el lado1 para poder ingresar el lado del cuadrado
+        txtLado1.setEnabled(true);
+        txtLado1.setEditable(true);
+        txtLado2.setEnabled(false);
+        txtLado2.setEditable(false);
+        txtLado3.setEnabled(false);
+        txtLado3.setEditable(false);
+        txtRadio.setEnabled(false);
+        txtRadio.setEditable(false);
+    }//GEN-LAST:event_rbtnCuadradoActionPerformed
+
+    private void rbtnTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTrianguloActionPerformed
+       //habilito para ingresar los tres lados del triangulo
+        txtLado1.setEnabled(true);
+        txtLado1.setEditable(true);
+        txtLado2.setEnabled(true);
+        txtLado2.setEditable(true);
+        txtLado3.setEnabled(true);
+        txtLado3.setEditable(true);
+        txtRadio.setEnabled(false);
+        txtRadio.setEditable(false);
+    }//GEN-LAST:event_rbtnTrianguloActionPerformed
+
+    private void rbtnCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCirculoActionPerformed
+       //habilito solo el campo que permite ingresar el radio del circulo
+        txtLado1.setEnabled(false);
+        txtLado1.setEditable(false);
+        txtLado2.setEnabled(false);
+        txtLado2.setEditable(false);
+        txtLado3.setEnabled(false);
+        txtLado3.setEditable(false);
+        txtRadio.setEnabled(true);
+        txtRadio.setEditable(true);
+    }//GEN-LAST:event_rbtnCirculoActionPerformed
+
     /**
      * @param args the command line arguments
      */
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnArea;
     private javax.swing.ButtonGroup btnGrupo;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnPerimetro;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparatorInf;
     private javax.swing.JSeparator jSeparatorSup;
+    private javax.swing.JLabel lblLado1;
+    private javax.swing.JLabel lblLado2;
+    private javax.swing.JLabel lblLado3;
+    private javax.swing.JLabel lblRadio;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JRadioButton rbtnCirculo;
     private javax.swing.JRadioButton rbtnCuadrado;
     private javax.swing.JRadioButton rbtnTriangulo;
+    private javax.swing.JTextField txtLado1;
+    private javax.swing.JTextField txtLado2;
+    private javax.swing.JTextField txtLado3;
+    private javax.swing.JTextField txtRadio;
+    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }
