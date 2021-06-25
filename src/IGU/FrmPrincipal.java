@@ -327,7 +327,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAreaActionPerformed
 
     private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
-       if(rbtnTriangulo.isSelected()){
+       
+        if(rbtnTriangulo.isSelected()){
            Controladora control = new Controladora();
            double lado1;
            double lado2;
@@ -339,6 +340,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
            lado3 =  Double.parseDouble(txtLado3.getText());
            perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
            txtResultado.setText(String.valueOf(perimetroTriangulo));
+       
+        }else if (rbtnCuadrado.isSelected()){
+           Controladora control = new Controladora();
+           double lado;
+           double perimetroCuadrado;
+           
+           lado = Double.parseDouble(txtLado1.getText());
+           perimetroCuadrado = control.calcularPerimetroCuadrado(lado);
+           txtResultado.setText(String.valueOf(perimetroCuadrado));
+           
+        }else if (rbtnCirculo.isSelected()){
+           Controladora control = new Controladora();
+           double radio;
+           double perimetroCirculo;
+           
+           radio = Double.parseDouble(txtRadio.getText());
+           perimetroCirculo = control.calcularPerimetroCirculo(radio);
+           txtResultado.setText(String.valueOf(perimetroCirculo));
        }
     }//GEN-LAST:event_btnPerimetroActionPerformed
 

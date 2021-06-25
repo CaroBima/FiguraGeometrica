@@ -21,9 +21,16 @@ public class Controladora {
     //area y perimetro del cuadrado
     public double calcularAreaCuadrado(double lado){
         Cuadrado cuadrado = new Cuadrado();
+       
         cuadrado.calcularArea(lado);
-        
         return cuadrado.getArea();
+    }
+    
+    public double calcularPerimetroCuadrado(double lado){
+        Cuadrado cuadrado = new Cuadrado();
+        
+        cuadrado.calcularPerimetro(lado);
+        return cuadrado.getPerimetro();
     }
     
     
@@ -34,5 +41,12 @@ public class Controladora {
         
         circulo.calcularArea(radio);
         return circulo.getArea();
+    }
+    
+    public double calcularPerimetroCirculo(double radio){
+        Circulo circulo = new Circulo();
+        
+        circulo.calcularPerimetro(radio);
+        return circulo.getPerimetro();
     }
 }
