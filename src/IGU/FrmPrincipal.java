@@ -27,18 +27,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         rbtnCirculo = new javax.swing.JRadioButton();
         rbtnTriangulo = new javax.swing.JRadioButton();
         jSeparatorInf = new javax.swing.JSeparator();
-        txtLado1 = new javax.swing.JTextField();
         lblLado1 = new javax.swing.JLabel();
-        lblLado3 = new javax.swing.JLabel();
+        txtLado1 = new javax.swing.JTextField();
         lblLado2 = new javax.swing.JLabel();
-        lblRadio = new javax.swing.JLabel();
         txtLado2 = new javax.swing.JTextField();
+        lblLado3 = new javax.swing.JLabel();
         txtLado3 = new javax.swing.JTextField();
+        lblRadio = new javax.swing.JLabel();
         txtRadio = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
         btnArea = new javax.swing.JButton();
         btnPerimetro = new javax.swing.JButton();
         txtResultado = new javax.swing.JTextField();
-        btnLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,37 +74,58 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jSeparatorInf.setBackground(new java.awt.Color(255, 0, 51));
         jSeparatorInf.setForeground(new java.awt.Color(255, 102, 102));
 
+        lblLado1.setText("Lado 1:");
+
         txtLado1.setEditable(false);
         txtLado1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtLado1.setText("0");
 
-        lblLado1.setText("Lado 1:");
+        lblLado2.setText("Lado 2:");
+
+        txtLado2.setEditable(false);
+        txtLado2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtLado2.setText("0");
+        txtLado2.setEnabled(false);
 
         lblLado3.setText("Lado 3:");
 
-        lblLado2.setText("Lado 2:");
+        txtLado3.setEditable(false);
+        txtLado3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtLado3.setText("0");
+        txtLado3.setEnabled(false);
 
         lblRadio.setText("Radio:");
 
-        txtLado2.setEditable(false);
-        txtLado2.setEnabled(false);
-
-        txtLado3.setEditable(false);
-        txtLado3.setEnabled(false);
-
         txtRadio.setEditable(false);
+        txtRadio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtRadio.setText("0");
         txtRadio.setEnabled(false);
 
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
+
         btnArea.setText("Área");
+        btnArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaActionPerformed(evt);
+            }
+        });
 
         btnPerimetro.setText("Perímetro");
+        btnPerimetro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerimetroActionPerformed(evt);
+            }
+        });
 
         txtResultado.setEditable(false);
         txtResultado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtResultado.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtResultado.setText("0");
-
-        btnLimpiar.setText("Limpiar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -205,6 +226,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void rbtnCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCuadradoActionPerformed
         //habilito solo el lado1 para poder ingresar el lado del cuadrado
+        lblLado1.setText("Lado:   ");
         txtLado1.setEnabled(true);
         txtLado1.setEditable(true);
         txtLado2.setEnabled(false);
@@ -217,6 +239,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void rbtnTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTrianguloActionPerformed
        //habilito para ingresar los tres lados del triangulo
+        lblLado1.setText("Lado 1: ");
         txtLado1.setEnabled(true);
         txtLado1.setEditable(true);
         txtLado2.setEnabled(true);
@@ -239,6 +262,38 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtRadio.setEditable(true);
     }//GEN-LAST:event_rbtnCirculoActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        this.limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
+        //limpio el formulario tras calcular el area
+        this.limpiar();
+    }//GEN-LAST:event_btnAreaActionPerformed
+
+    private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
+        //limpio el formulario tras calcular el perimetro
+        this.limpiar();
+    }//GEN-LAST:event_btnPerimetroActionPerformed
+
+    private void limpiar(){
+        btnGrupo.clearSelection();
+        
+        txtLado1.setText("0");
+        txtLado2.setText("0");
+        txtLado3.setText("0");
+        txtRadio.setText("0");
+        
+        txtLado1.setEnabled(false);
+        txtLado1.setEditable(false);
+        txtLado2.setEnabled(false);
+        txtLado2.setEditable(false);
+        txtLado3.setEnabled(false);
+        txtLado3.setEditable(false);
+        txtRadio.setEnabled(false);
+        txtRadio.setEditable(false);
+        
+    }
     /**
      * @param args the command line arguments
      */
