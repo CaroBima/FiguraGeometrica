@@ -277,13 +277,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPerimetroActionPerformed
 
     private void limpiar(){
+        //limpia los radio btn
         btnGrupo.clearSelection();
         
+        //seteo a 0 los textfield
         txtLado1.setText("0");
         txtLado2.setText("0");
         txtLado3.setText("0");
         txtRadio.setText("0");
         
+        //desactivo los textfield para que se habiliten con una nueva seleccion de radio btn
         txtLado1.setEnabled(false);
         txtLado1.setEditable(false);
         txtLado2.setEnabled(false);
