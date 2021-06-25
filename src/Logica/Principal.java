@@ -11,7 +11,13 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        /* variables usadas en la ejecucion por consola
+        FrmPrincipal formulario = new FrmPrincipal();
+        formulario.setVisible(true);
+        formulario.setLocationRelativeTo(null); //
+        
+        /*Comentado toda la logica que se ejecuta por consola para poder hacerlo por el form
+        
+        variables usadas en la ejecucion por consola
         int tipoFigura = 9;
         int lado = 0;
         double radio = 02;
@@ -19,13 +25,7 @@ public class Principal {
         double lado2 = 0;
         double lado3 = 0;
         int areaOPerimetro = 0;
-        */
         
-        FrmPrincipal formulario = new  FrmPrincipal();
-        formulario.setVisible(true);
-        formulario.setLocationRelativeTo(null); //
-
-    /*   Comentado toda la logica que se ejecuta por consola para poder hacerlo por el form
         
         //valido que se ingrese una opcion valida
         while (tipoFigura != 0 && (tipoFigura != 1 && tipoFigura != 2 && tipoFigura != 3)) {
@@ -139,7 +139,7 @@ public class Principal {
         
         }   
             
-    */
+         */
     } // main
 
 }

@@ -1,19 +1,19 @@
-
 package Logica;
 
-public class Cuadrado extends FiguraGeometrica{
+public class Cuadrado extends FiguraGeometrica {
+
     private double lado, ar;
-    
+
     //@Override
-    public void calcularArea(double lad){
-        ar = lad*lad;
-        this.setArea(ar); 
-       
+    public void calcularArea(double lad) {
+        ar = lad * lad;
+        this.setArea(ar);
+
     }
-    
-     public void calcularPerimetro(double lado){
+
+    public void calcularPerimetro(double lado) {
         double perim;
-        perim = lado*4;
+        perim = lado * 4;
         this.setPerimetro(perim);
     }
 
@@ -42,7 +42,4 @@ public class Cuadrado extends FiguraGeometrica{
         this.ar = ar;
     }
 
-    
-   
-     
 }

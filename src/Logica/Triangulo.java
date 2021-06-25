@@ -1,7 +1,7 @@
 package Logica;
 
+public class Triangulo extends FiguraGeometrica {
 
-public class Triangulo extends FiguraGeometrica{
     private double lado1;
     private double lado2;
     private double lado3;
@@ -14,20 +14,19 @@ public class Triangulo extends FiguraGeometrica{
     private double raiz2 = 0;
 
     //calcula el area del triangulo segun los lados ingresados por el usuario
-    public void calcularArea(double lado1, double lado2, double lado3){
-        semiperimetro = (lado1 + lado2 + lado3)/2;
-        raiz = semiperimetro*((semiperimetro - lado1)*(semiperimetro - lado2)*(semiperimetro - lado3));
-        raiz2= Math.abs(raiz);
+    public void calcularArea(double lado1, double lado2, double lado3) {
+        semiperimetro = (lado1 + lado2 + lado3) / 2;
+        raiz = semiperimetro * ((semiperimetro - lado1) * (semiperimetro - lado2) * (semiperimetro - lado3));
+        raiz2 = Math.abs(raiz);
         area = Math.sqrt(raiz2);
         this.setArea(area);
     }
-    
-    public void calcularPerimetro(double lado1, double lado2, double lado3){
+
+    public void calcularPerimetro(double lado1, double lado2, double lado3) {
         double perim = 0;
         perim = lado1 + lado2 + lado3;
         this.setPerimetro(perim);
     }
-
 
     public Triangulo(int lado1, int lado2, int lado3, double angulo1, double angulo2, double angulo3, int cantidadLados, String nombre, double area, double perimetro) {
         super(cantidadLados, nombre, area, perimetro);
@@ -89,7 +88,5 @@ public class Triangulo extends FiguraGeometrica{
     public void setAngulo3(double angulo3) {
         this.angulo3 = angulo3;
     }
-    
-    
-    
+
 }

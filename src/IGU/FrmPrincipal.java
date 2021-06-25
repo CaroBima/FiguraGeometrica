@@ -9,7 +9,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnGrupo.add(rbtnCirculo);
         btnGrupo.add(rbtnCuadrado);
         btnGrupo.add(rbtnTriangulo);
-        
+
     }
 
     /**
@@ -228,7 +228,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbtnCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCuadradoActionPerformed
-      
+
         //habilito solo el lado1 para poder ingresar el lado del cuadrado
         txtResultado.setText("0");
         lblLado1.setText("Lado:   ");
@@ -240,15 +240,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(false);
         txtRadio.setEnabled(false);
         txtRadio.setEditable(false);
-       
+
     }//GEN-LAST:event_rbtnCuadradoActionPerformed
 
     private void rbtnTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTrianguloActionPerformed
-      
+
         //habilito para ingresar los tres lados del triangulo
         txtResultado.setText("0");
         this.limpiar();
-        
+
         lblLado1.setText("Lado 1: ");
         txtLado1.setEnabled(true);
         txtLado1.setEditable(true);
@@ -258,14 +258,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(true);
         txtRadio.setEnabled(false);
         txtRadio.setEditable(false);
-       
+
     }//GEN-LAST:event_rbtnTrianguloActionPerformed
 
     private void rbtnCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnCirculoActionPerformed
         //habilito solo el campo que permite ingresar el radio del circulo
         txtResultado.setText("0");
         this.limpiar();
-        
+
         txtLado1.setEnabled(false);
         txtLado1.setEditable(false);
         txtLado2.setEnabled(false);
@@ -274,7 +274,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(false);
         txtRadio.setEnabled(true);
         txtRadio.setEditable(true);
-    
+
     }//GEN-LAST:event_rbtnCirculoActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -284,91 +284,102 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
-        
-        if(rbtnTriangulo.isSelected()){
-            
+
+        if (rbtnTriangulo.isSelected()) {
+
             Controladora control = new Controladora();
             double lado1;
             double lado2;
             double lado3;
             double areaTriangulo;
-            
-            lado1 =  Double.parseDouble(txtLado1.getText());
-            lado2 =  Double.parseDouble(txtLado2.getText());
-            lado3 =  Double.parseDouble(txtLado3.getText());
-             
+
+            lado1 = Double.parseDouble(txtLado1.getText());
+            lado2 = Double.parseDouble(txtLado2.getText());
+            lado3 = Double.parseDouble(txtLado3.getText());
+
+            //lamo al metodo que permite obtener el area del triangulo y lo muestro en el txtbox de resultado
             areaTriangulo = control.calcularAreaTriangulo(lado1, lado2, lado3);
-            
             txtResultado.setText(String.valueOf(areaTriangulo));
-        
-        }else if(rbtnCuadrado.isSelected()){
+
+        } else if (rbtnCuadrado.isSelected()) {
+
             Controladora control = new Controladora();
             double lado1;
             double areacuadrado;
-            
+
             lado1 = Double.parseDouble(txtLado1.getText());
-            
+
+            //lamo al metodo que permite obtener el area del cuadrado y lo muestro en el txtbox de resultado
             areacuadrado = control.calcularAreaCuadrado(lado1);
-            
             txtResultado.setText(String.valueOf(areacuadrado));
-        }else if(rbtnCirculo.isSelected()){
+
+        } else if (rbtnCirculo.isSelected()) {
+
             Controladora control = new Controladora();
             double radio;
             double radioCirculo;
-            
+
             radio = Double.parseDouble(txtRadio.getText());
-            
+
+            //lamo al metodo que permite obtener el area del circulo y lo muestro en el txtbox de resultado
             radioCirculo = control.calcularAreaCirculo(radio);
-            
             txtResultado.setText(String.valueOf(radioCirculo));
-                
+
         }
-        
+
     }//GEN-LAST:event_btnAreaActionPerformed
 
     private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
-       
-        if(rbtnTriangulo.isSelected()){
-           Controladora control = new Controladora();
-           double lado1;
-           double lado2;
-           double lado3;
-           double perimetroTriangulo;
-           
-           lado1 =  Double.parseDouble(txtLado1.getText());
-           lado2 =  Double.parseDouble(txtLado2.getText());
-           lado3 =  Double.parseDouble(txtLado3.getText());
-           perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
-           txtResultado.setText(String.valueOf(perimetroTriangulo));
-       
-        }else if (rbtnCuadrado.isSelected()){
-           Controladora control = new Controladora();
-           double lado;
-           double perimetroCuadrado;
-           
-           lado = Double.parseDouble(txtLado1.getText());
-           perimetroCuadrado = control.calcularPerimetroCuadrado(lado);
-           txtResultado.setText(String.valueOf(perimetroCuadrado));
-           
-        }else if (rbtnCirculo.isSelected()){
-           Controladora control = new Controladora();
-           double radio;
-           double perimetroCirculo;
-           
-           radio = Double.parseDouble(txtRadio.getText());
-           perimetroCirculo = control.calcularPerimetroCirculo(radio);
-           txtResultado.setText(String.valueOf(perimetroCirculo));
-       }
+
+        if (rbtnTriangulo.isSelected()) {
+
+            Controladora control = new Controladora();
+            double lado1;
+            double lado2;
+            double lado3;
+            double perimetroTriangulo;
+
+            lado1 = Double.parseDouble(txtLado1.getText());
+            lado2 = Double.parseDouble(txtLado2.getText());
+            lado3 = Double.parseDouble(txtLado3.getText());
+
+            //lamo al metodo que permite obtener el perímetro del triangulo y lo muestro en el txtbox de resultado
+            perimetroTriangulo = control.calcularPerimetroTriangulo(lado1, lado2, lado3);
+            txtResultado.setText(String.valueOf(perimetroTriangulo));
+
+        } else if (rbtnCuadrado.isSelected()) {
+            Controladora control = new Controladora();
+            double lado;
+            double perimetroCuadrado;
+
+            lado = Double.parseDouble(txtLado1.getText());
+
+            //lamo al metodo que permite obtener el perímetro del cuadrado y lo muestro en el txtbox de resultado
+            perimetroCuadrado = control.calcularPerimetroCuadrado(lado);
+            txtResultado.setText(String.valueOf(perimetroCuadrado));
+
+        } else if (rbtnCirculo.isSelected()) {
+
+            Controladora control = new Controladora();
+            double radio;
+            double perimetroCirculo;
+
+            radio = Double.parseDouble(txtRadio.getText());
+
+            //lamo al metodo que permite obtener el perímetro del circulo y lo muestro en el txtbox de resultado
+            perimetroCirculo = control.calcularPerimetroCirculo(radio);
+            txtResultado.setText(String.valueOf(perimetroCirculo));
+        }
     }//GEN-LAST:event_btnPerimetroActionPerformed
 
-    private void limpiar(){
-        
+    private void limpiar() {
+
         //seteo a 0 los textfield
         txtLado1.setText("0");
         txtLado2.setText("0");
         txtLado3.setText("0");
         txtRadio.setText("0");
-        
+
         //desactivo los textfield para que se habiliten con una nueva seleccion de radio btn
         txtLado1.setEnabled(false);
         txtLado1.setEditable(false);
@@ -378,12 +389,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         txtLado3.setEditable(false);
         txtRadio.setEnabled(false);
         txtRadio.setEditable(false);
-       
+
     }
     /**
      * @param args the command line arguments
      */
-  
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArea;
